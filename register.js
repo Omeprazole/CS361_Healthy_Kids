@@ -18,6 +18,7 @@ function accountCreation(){
 				if(JSON.parse(httpRequest.responseText) == 10){
 					error.innerHTML = "<label id = 'passwordError'> wrong account! </label>";
 				} else if(JSON.parse(httpRequest.responseText) == 11) {
+					window.location.replace("http://web.engr.oregonstate.edu/~bauerbr/HealthyKids/fake.html");
 					window.location.replace("http://web.engr.oregonstate.edu/~bauerbr/HealthyKids/new.html");
 				}
 			
@@ -64,8 +65,8 @@ function validUser(username,password,repass){
 
 
 function login(){
-	  var username2 = document.getElementById ("username");
-	  var password3 = document.getElementById ("password");
+	  var username2 = document.getElementById ("username2");
+	  var password3 = document.getElementById ("password3");
 	console.log(username2.value);
 	console.log(password3.value);
 	console.log(validUser(username2.value,password3.value,password3.value));
@@ -74,17 +75,16 @@ function login(){
 	} else{
 		console.log("bug");
 		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.open("GET", "../Final/ajax.php?username="+username2.value+"&password="+password3.value, true);
+		xmlhttp.open("GET", "../HealthyKids/login_v2.php?username="+username2.value+"&password="+password3.value, true);
 		xmlhttp.send();
-		console.log("bug");
-  
 		xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 				console.log("Connection successful");
 					if(JSON.parse(xmlhttp.responseText) == 10){
 					error.innerHTML = "<label id = 'passwordError'> wrong account! </label>";
-				} else if(JSON.parse(xmlhttp.responseText) == 15) {
-					window.location.replace("http://web.engr.oregonstate.edu/~bauerbr/Final/final.php");
+				} else {
+					window.location.replace("http://web.engr.oregonstate.edu/~bauerbr/HealthyKids/new.html");
+					return false;
 				}
 			console.log(JSON.parse(xmlhttp.responseText));
 				
