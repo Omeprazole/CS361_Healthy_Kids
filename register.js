@@ -1,15 +1,16 @@
 function accountCreation(){
 	  var username1 = document.getElementById ("username");
 	  var password1 = document.getElementById ("password");
-	  var password2 = document.getElementById ("repassword");
+	  var password2 = document.getElementById ("repass");
 	console.log(username1.value);
 	console.log(password1.value);
 	console.log(validUser(username1.value,password1.value,password2.value));
 	if(validUser(username1.value,password1.value,password2.value) == false){
+		return false;
 	} else{
 		var httpRequest = new XMLHttpRequest();
 		
-		httpRequest.open("GET", "../Final/register.php?username="+username1.value+"&password="+password1.value, true);
+		httpRequest.open("GET", "../HealthyKids/register.php?username="+username1.value+"&password="+password1.value, true);
 		httpRequest.send();
 		
 		httpRequest.onreadystatechange = function() {
@@ -17,7 +18,7 @@ function accountCreation(){
 				if(JSON.parse(httpRequest.responseText) == 10){
 					error.innerHTML = "<label id = 'passwordError'> wrong account! </label>";
 				} else if(JSON.parse(httpRequest.responseText) == 11) {
-					window.location.replace("http://web.engr.oregonstate.edu/~bauerbr/Final/final.php");
+					window.location.replace("http://web.engr.oregonstate.edu/~bauerbr/HealthyKids/new.html");
 				}
 			
 		
@@ -36,7 +37,7 @@ function validUser(username,password,repass){
 		error.innerHTML = "<label id = 'passwordError'> Password Invalid! </label>";
 		check = false;
 	}
-	if(username.length > 16){
+	if(username.length > 40){
 		error.innerHTML = "<label id = 'passwordError'> User-name Invalid! </label>";
 		check = false;
 	}
