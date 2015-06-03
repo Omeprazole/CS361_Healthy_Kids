@@ -11,4 +11,4 @@ c. Prospective app user will see different checkpoints throughout their fitness 
  
 (i.e. Do as many sit-ups in 1 minute”) Total units: 6
  
-Login in and register complete
+Login in and registration complete
