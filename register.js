@@ -18,7 +18,6 @@ function accountCreation(){
 				if(JSON.parse(httpRequest.responseText) == 10){
 					error.innerHTML = "<label id = 'passwordError'> wrong account! </label>";
 				} else if(JSON.parse(httpRequest.responseText) == 11) {
-					window.location.replace("http://web.engr.oregonstate.edu/~bauerbr/HealthyKids/fake.html");
 					window.location.replace("http://web.engr.oregonstate.edu/~bauerbr/HealthyKids/new.html");
 				}
 			
@@ -78,13 +77,12 @@ function login(){
 		xmlhttp.open("GET", "../HealthyKids/login_v2.php?username="+username2.value+"&password="+password3.value, true);
 		xmlhttp.send();
 		xmlhttp.onreadystatechange = function() {
-			if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 				console.log("Connection successful");
 					if(JSON.parse(xmlhttp.responseText) == 10){
 					error.innerHTML = "<label id = 'passwordError'> wrong account! </label>";
 				} else {
 					window.location.replace("http://web.engr.oregonstate.edu/~bauerbr/HealthyKids/new.html");
-					return false;
 				}
 			console.log(JSON.parse(xmlhttp.responseText));
 				
