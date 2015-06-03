@@ -13,7 +13,6 @@
 	
      $username = htmlspecialchars($_GET['username']);
 	 $password = htmlspecialchars($_GET['password']);
-	 echo $username;
 	$sql = "INSERT INTO users (username,password) VALUES('$username','$password')";
 	if(!$result = $con->query($sql)){
 		echo json_encode(10);

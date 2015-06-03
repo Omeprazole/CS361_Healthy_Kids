@@ -9,10 +9,8 @@ function accountCreation(){
 		return false;
 	} else{
 		var httpRequest = new XMLHttpRequest();
-		
 		httpRequest.open("GET", "../HealthyKids/register.php?username="+username1.value+"&password="+password1.value, true);
 		httpRequest.send();
-		
 		httpRequest.onreadystatechange = function() {
 			if (httpRequest.readyState === 4 && httpRequest.status === 200) {
 				if(JSON.parse(httpRequest.responseText) == 10){
@@ -20,12 +18,8 @@ function accountCreation(){
 				} else if(JSON.parse(httpRequest.responseText) == 11) {
 					window.location.replace("http://web.engr.oregonstate.edu/~bauerbr/HealthyKids/new.html");
 				}
-			
-		
 			}
 		}
-		
-		
 	}
 }
 
@@ -74,20 +68,23 @@ function login(){
 	} else{
 		console.log("bug");
 		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.open("GET", "../HealthyKids/login_v2.php?username="+username2.value+"&password="+password3.value, true);
+		xmlhttp.open("GET", "../HealthyKids/loginv2.php?username="+username2.value+"&password="+password3.value, true);
 		xmlhttp.send();
-		xmlhttp.onreadystatechange = function() {
-			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+		console.log("test");
+		
+	xmlhttp.onreadystatechange = function() {
+			if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 				console.log("Connection successful");
 					if(JSON.parse(xmlhttp.responseText) == 10){
-					error.innerHTML = "<label id = 'passwordError'> wrong account! </label>";
-				} else {
+					error.innerHTML = "<label id = 'passwordError'> Invalid Credentials </label>";
+				} else if(JSON.parse(xmlhttp.responseText) == 15) {
 					window.location.replace("http://web.engr.oregonstate.edu/~bauerbr/HealthyKids/new.html");
 				}
 			console.log(JSON.parse(xmlhttp.responseText));
 				
+		
 		}
-		}
+	} 
 	}
  
 }
