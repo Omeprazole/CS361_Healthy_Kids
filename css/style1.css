@@ -1,6 +1,6 @@
 body {
-    background: url("../img/KidsPlaying.jpeg");
-    background-size: 80px 60pc;
+    background: url("../img/KidsPlaying.jpg");
+    background-size: cover;
     background-position: 0px 0px, center;
     background-repeat: no-repeat;
     text-align: center;
@@ -45,31 +45,22 @@ body {
     font-family: arial;
 }
 
-table{
-	font-size: 16px;
-    height: auto;
-    margin-bottom: 15px;
-    padding: 7px 9px;
-	font-family: arial;
-
+table {
+margin-left: auto;
+margin-right: auto;
 }
-td {
-	font-size: 16px;
-    height: auto;
-    margin-bottom: 15px;
-    padding: 7px 9px;
-	font-family: arial;
-	
-
+table, th, td {
+   border: 1px solid black;
+   text-align: center;
+}
+td{
+padding: 15px
 }
 
-tr{
-	font-size: 16px;
-    height: auto;
-    margin-bottom: 15px;
-    padding: 7px 9px;
-	font-family: arial;
+.table12{
+margin-left: auto;
+ margin-right: auto;
+	}
 
-}
 
 

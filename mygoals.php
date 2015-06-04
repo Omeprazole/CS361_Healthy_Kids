@@ -13,12 +13,21 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="App to combat childhood obesity">
     <meta name="author" content="CS361 - Healthy Kids, Happy Adults">
-
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/bootstrap-theme.css" rel="stylesheet">
 	<link href="css/style1.css" rel="stylesheet">
   </head>
   <body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+          <a class="navbar-brand" style="color:white">Healthy Kids, Happy Adults</a>
+		  <ul class="nav navbar-nav">
+		  <li><a href="../HealthyKids/daily_goal.html">Daily Goals</a></li>
+		  <li><a href="../HealthyKids/logout.php">Logout</a></li>
+		  </ul>
+        </div>
+      </div>
+    </nav>
  <?php
 
  if (!$_SESSION["username"] == "1"){
@@ -33,8 +42,9 @@ session_start();
 		
 	 
 		echo '<p><h2>Your Goals</h2><p>
+			<div id = table12>
 			<table>
-		    <tr><td>Goal<td>Description<td>';
+		    <tr><td>Goal<td>Description';
 
 		$out_checkpoint = '';
 		$out_check_desc = '';
@@ -66,7 +76,7 @@ session_start();
 				}
 		
 		while ($stmt->fetch()){
-				echo '<tr> <td>  '.$out_goal_name.'<td> '.$out_desc.'<td>'.$out_checkpoint.'<td>'.$out_check_desc.'<td>    
+				echo '<tr> <td>  '.$out_goal_name.'<td> '.$out_desc.' 
 				<br>'; 
 		}
 			echo "</table>";
@@ -78,7 +88,7 @@ session_start();
 
 	 echo'<br><br><br><b>Add New Item</b><br><br>
 	  <form name = "goal_new" method = "post">
-	  <label> Add Goal: </label> 
+	<label> Add Goal:</label> 
 	  <input type = "text" id ="newName"> <br>
 	  <label> Add Goal Description: </label> 
 	  <input type = "text" id ="goal_description"> <br>
@@ -88,7 +98,8 @@ session_start();
 	 //html coding for decimal constraints on Description from http://stackoverflow.com/questions/19011861/is-there-a-float-input-type-in-html5
  }
 	  
-?> 
+?>
+</div>
 
  <script type='text/javascript'>
 
