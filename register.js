@@ -16,7 +16,7 @@ function accountCreation(){
 				if(JSON.parse(httpRequest.responseText) == 10){
 					error.innerHTML = "<label id = 'passwordError'> wrong account! </label>";
 				} else if(JSON.parse(httpRequest.responseText) == 11) {
-					window.location.replace("http://web.engr.oregonstate.edu/~bauerbr/HealthyKids/new.html");
+					window.location.replace("http://web.engr.oregonstate.edu/~bauerbr/HealthyKids/mygoals.php");
 				}
 			}
 		}
@@ -78,7 +78,7 @@ function login(){
 					if(JSON.parse(xmlhttp.responseText) == 10){
 					error.innerHTML = "<label id = 'passwordError'> Invalid Credentials </label>";
 				} else if(JSON.parse(xmlhttp.responseText) == 15) {
-					window.location.replace("http://web.engr.oregonstate.edu/~bauerbr/HealthyKids/new.html");
+					window.location.replace("http://web.engr.oregonstate.edu/~bauerbr/HealthyKids/mygoals.php");
 				}
 			console.log(JSON.parse(xmlhttp.responseText));
 				
