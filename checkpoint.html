@@ -22,57 +22,50 @@ http://stackoverflow.com/questions/21670438/make-countdown-start-after-button-is
 <p>- Log your info below when you're all done to keep track of your progress</p>
 <br>
 
-<span id="count"><b>60</span> seconds to do as many PUSHUPS as you can</b><br>
-<a href="#" id="startClock"><h3>Start Clock</h3></a>
-
-<script>
-jQuery(function($){
-   $('#startClock').on('click', doCount);
-});
-
-function doCount(){
-   var counter = 60;
-   setInterval(function() {
-      counter--;
-      if (counter >= 0) {
-         span = document.getElementById("count");
-         span.innerHTML = counter;
-      }
-      if (counter === 0) {
-        alert('STOP! Your time is up.');
-        clearInterval(counter);
-      }
-   }, 1000);
-}
-</script>
+<b><span id="count_1">60</span> seconds to do as many PUSHUPS as you can</b><br>
+<a href="#" id="startClock_1"><h3>Start Clock</h3></a>
 
 <br>
 
-<span id="count"><b>60</span> seconds to do as many SITUPS as you can</b>
-
-<a href="#" id="startClock"><h3>Start Clock</h3></a>
-
+<b><span id="count_2">60</span> seconds to do as many SITUPS as you can</b>
+<a href="#" id="startClock_2"><h3>Start Clock</h3></a>
 
 <script>
 jQuery(function($){
-   $('#startClock').on('click', doCount);
-});
-
-function doCount(){
-   var counter = 60;
-   setInterval(function() {
+  $('#startClock_1').on('click', function () {
+    var counter = 60;
+    setInterval(function () {
       counter--;
+
       if (counter >= 0) {
-         span = document.getElementById("count");
-         span.innerHTML = counter;
+         span = $('#count_1');
+         span.html(counter);
       }
       if (counter === 0) {
         alert('STOP! Your time is up.');
         clearInterval(counter);
       }
-   }, 1000);
-}
+    }, 1000);
+  });
+
+   $('#startClock_2').on('click', function () {
+    var counter = 60;
+    setInterval(function () {
+      counter--;
+
+      if (counter >= 0) {
+         span = $('#count_2');
+         span.html(counter);
+      }
+      if (counter === 0) {
+        alert('STOP! Your time is up.');
+        clearInterval(counter);
+      }
+    }, 1000);
+  });
+});
 </script>
+
 
 <br><br>
 <form class="form-horizontal">
