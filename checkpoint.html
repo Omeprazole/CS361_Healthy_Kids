@@ -11,8 +11,19 @@ http://stackoverflow.com/questions/21670438/make-countdown-start-after-button-is
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="container"><br><br>
 
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+          <a class="navbar-brand" href="../HealthyKids/mygoals.php" style="color:white">Healthy Kids, Happy Adults</a>
+		  <ul class="nav navbar-nav">
+		  <li><a href="../HealthyKids/daily_goal.html">Daily Goals</a></li>
+		  <li><a href="../HealthyKids/logout.php">Logout</a></li>
+		  </ul>
+        </div>
+      </div>
+    </nav>
+<div class="container"><br><br>
+<br> <br>
 <img class="kids" src="img/kids.jpg">
 <br><h3>Congrats! You've reached a checkpoint!</h3>
 <h4>Your goal today is to do as many pushups and situps per 1 minute countdown</h4>
@@ -64,6 +75,10 @@ jQuery(function($){
     }, 1000);
   });
 });
+
+function redirect(){
+window.location.replace("http://web.engr.oregonstate.edu/~bauerbr/HealthyKids/completion.html");
+}
 </script>
 
 
@@ -96,7 +111,7 @@ jQuery(function($){
 <div class="control-group">
   <label class="control-label" for="submit"></label>
   <div class="controls">
-    <button id="submit" name="submit" class="btn btn-success">Submit</button>
+    <input type ="button"  value = "submit" class="btn btn-success" onClick = "return redirect()"></button>
   </div>
 </div>
 

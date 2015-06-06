@@ -20,7 +20,7 @@ session_start();
   <body>
   <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
-          <a class="navbar-brand" style="color:white">Healthy Kids, Happy Adults</a>
+          <a class="navbar-brand" href="../HealthyKids/mygoals.php" style="color:white">Healthy Kids, Happy Adults</a>
 		  <ul class="nav navbar-nav">
 		  <li><a href="../HealthyKids/daily_goal.html">Daily Goals</a></li>
 		  <li><a href="../HealthyKids/logout.php">Logout</a></li>
