@@ -1,7 +1,5 @@
 <?php
 error_reporting(E_ALL);
-
-ini_set('display_errors', 1);
 include 'storedpassword.php'; //This is for logging in to  ONID db without displaying the password as it is stored in a hidden folder
 session_start();
 ?>
@@ -32,6 +30,7 @@ session_start();
 
  if (!$_SESSION["username"] == "1"){
 	echo '<h2>Please log in to customize your items</h2>';
+	echo '<h2><a href="../HealthyKids/login_v2.html">Click Here to Login</a></h2>';
 		  
  }  
 
