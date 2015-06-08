@@ -27,13 +27,11 @@ session_start();
       </div>
     </nav>
  <?php
-
  if (!$_SESSION["username"] == "1"){
 	echo '<h2>Please log in to customize your items</h2>';
 	echo '<h2><a href="../HealthyKids/login_v2.html">Click Here to Login</a></h2>';
 		  
  }  
-
  else {
 		$mysqli = new mysqli("oniddb.cws.oregonstate.edu","bauerbr-db",$password,"bauerbr-db"); //my DB
 		
@@ -44,13 +42,11 @@ session_start();
 			<div id = table12>
 			<table>
 		    <tr><td>Goal<td>Description';
-
 		$out_checkpoint = '';
 		$out_check_desc = '';
 		$out_goal_name = ''; 
 		$out_desc = '';
 		
-
 		if(!($stmt = $mysqli->prepare('	
 			SELECT goals.goal_name, goals.goal_descript, c.check_name, c.check_descript FROM goals
 			LEFT JOIN
@@ -63,7 +59,6 @@ session_start();
 			WHERE user_goals.useid = "'.$_SESSION["username"].'"
 			ORDER BY goals.goal_name'))){
 			echo "Prepare Failed";
-
 	
 		}
 		if(!($stmt->execute())){
@@ -79,12 +74,9 @@ session_start();
 				<br>'; 
 		}
 			echo "</table>";
-
 		
 		$stmt->close();
 ///////////////////////////////////////////////////
-
-
 	 echo'<br><br><br><b>Add New Item</b><br><br>
 	  <form name = "goal_new" method = "post">
 	<label> Add Goal:</label> 
@@ -101,8 +93,6 @@ session_start();
 </div>
 
  <script type='text/javascript'>
-
-
 function addItem() {
 	var input_name = document.getElementById("newName");
 	var input_desc= document.getElementById("goal_description");
@@ -130,7 +120,6 @@ function addItem() {
 	
 	
 }
-
 	 //PHP variable transfer syntax from http://p2p.wrox.com/php-faqs/11606-q-how-do-i-pass-php-variables-javascript.html
 </script>
 		<div id = 'message'></div>

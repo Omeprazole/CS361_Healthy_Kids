@@ -12,14 +12,11 @@ session_start();
   </head>
 <body></body>
 <?php
-
 	if (isset($_POST['newname']) == TRUE){ //syntax from http://php.net/manual/en/function.isset.php
 		$newname = $_POST['newname'];
 		$newdesc = $_POST['newdesc'];
 		$user = $_SESSION["username"];
-
 		$mysqli = new mysqli("oniddb.cws.oregonstate.edu","bauerbr-db",$password,"bauerbr-db");
-
 		if(!($stmt = $mysqli->prepare('INSERT INTO goals(goal_name,goal_descript) VALUES(?,?)'))){
 									echo "Prepare Failed<br>";
 				}
